@@ -30,3 +30,9 @@ docker-compose -f docker/docker-compose.yml up -d --build
 - [airbnb/hypernova-ruby: Ruby client for Hypernova.](https://github.com/airbnb/hypernova-ruby)
 - [toptal/webpack-assets: Webpack Assets for Rails](https://github.com/toptal/webpack-assets)
 - [Introduction | Vue Loader](https://vue-loader.vuejs.org/)
+
+## License
+
+(c) 2019 3846masa
+
+[MIT License](./LICENSE)
