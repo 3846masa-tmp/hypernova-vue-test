@@ -24,3 +24,9 @@ docker-compose up --build
 )
 docker-compose -f docker/docker-compose.yml up -d --build
 ```
+
+## Links
+
+- [airbnb/hypernova-ruby: Ruby client for Hypernova.](https://github.com/airbnb/hypernova-ruby)
+- [toptal/webpack-assets: Webpack Assets for Rails](https://github.com/toptal/webpack-assets)
+- [Introduction | Vue Loader](https://vue-loader.vuejs.org/)
