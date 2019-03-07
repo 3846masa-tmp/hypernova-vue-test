@@ -1,0 +1,28 @@
+version: "3"
+services:
+  database:
+    image: postgres
+    env_file: ./.production.env
+    volumes:
+      - "database:/var/lib/postgresql/data"
+  node:
+    image: hypernova-vue-example/node
+    build:
+      context: ../
+      dockerfile: ./docker/node.Dockerfile
+  rails:
+    image: hypernova-vue-example/rails
+    build:
+      context: ../
+      dockerfile: ./docker/rails.Dockerfile
+    env_file: ./.production.env
+    ports:
+      - "3000:3000"
+    depends_on:
+      - node
+      - database
+networks:
+  default:
+    driver: bridge
+volumes:
+  database: {}

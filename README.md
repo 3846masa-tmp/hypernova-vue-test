@@ -1,9 +1,26 @@
-# hypernova-vue-example
+# hypernova-vue-test
+
+## Setup
 
 ```bash
-rails new . \
-  --database=postgresql \
-  --skip-yarn --skip-git --skip-test \
-  --skip-action-mailer --skip-active-storage --skip-action-cable \
-  --skip-sprockets --skip-coffee --skip-javascript --skip-turbolinks
+cp .example.env .env
+sed -i .env -e "s#POSTGRES_PASSWORD=.*#POSTGRES_PASSWORD=$(openssl rand -base64 32)#"
+```
+
+## Develop
+
+```bash
+docker-compose up --build
+# Also, open http://localhost:8000
+```
+
+## Publish
+
+```bash
+(
+  cd docker;
+  cp .example.production.env .production.env
+  sed -i .production.env -e "s#POSTGRES_PASSWORD=.*#POSTGRES_PASSWORD=$(openssl rand -base64 32)#"
+)
+docker-compose -f docker/docker-compose.yml up -d --build
 ```

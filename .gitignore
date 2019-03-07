@@ -264,3 +264,11 @@ $RECYCLE.BIN/
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore build
+/frontend/dist
+/public/frontend
+# Ignore webpack-assets
+/webpack-assets.json
+
+.production.env
